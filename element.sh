@@ -19,7 +19,7 @@ fi
 # try to get atomic number directly
 # since numbers can't be passed enclosed by quotes have to be careful
 # that the input is not a column name
-if [[ $1 != atomic_number && $1 != atomic_number && $1 != name ]]
+if [[ $1 != atomic_number && $1 != atomic_number && $1 != name && -z $ATOMIC_NUMBER ]]
 then
     ATOMIC_NUMBER=$($PSQL "select atomic_number from elements where atomic_number=$1;" 2> /dev/null)
 fi
