@@ -33,8 +33,8 @@ else
     SYMBOL=$($PSQL "select symbol from elements where atomic_number=$ATOMIC_NUMBER;")
     NAME=$($PSQL "select name from elements where atomic_number=$ATOMIC_NUMBER;")
     ATOMIC_MASS=$($PSQL "select atomic_mass from properties where atomic_number=$ATOMIC_NUMBER;")
-    MELTING_POINT=$($PSQL "select melting_point_celcius from properties where atomic_number=$ATOMIC_NUMBER;")
-    BOILING_POINT=$($PSQL "select boiling_point_celcius from properties where atomic_number=$ATOMIC_NUMBER;")
+    MELTING_POINT=$($PSQL "select melting_point_celsius from properties where atomic_number=$ATOMIC_NUMBER;")
+    BOILING_POINT=$($PSQL "select boiling_point_celsius from properties where atomic_number=$ATOMIC_NUMBER;")
     TYPE=$($PSQL "select t.type from properties p inner join types t on p.type_id = t.type_id where p.atomic_number=$ATOMIC_NUMBER;")
 fi
 
